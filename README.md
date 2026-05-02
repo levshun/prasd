@@ -35,14 +35,19 @@ Other folders include:
 The naming convention for models corresponds to that used in the paper. Note that the ```models```directory includes 
 subfolders associated with the framework modules; for example, the ```scag``` subfolder contains pretrained models 
 for  ```C-SCAg``` and ```P-SCAg```.
-* ```real_data```: holds the data utilized for model training, validation, and testing on real-world data. 
+* ```data_real```: holds the data utilized for model training, validation, and testing on real-world data. 
 Data is stored in ```*.npy``` files, with features (```X```) and labels (```y```) separated. 
 If filenames use the prefix ```Xr_``` | ```yr_``` instead of ```X_``` | ```y_```, 
 this indicates a resampled version of the dataset, provided to comply with repository size limitations.
-* ```pred_data```: contains data employed for model evaluation on predicted datasets, also in ```*.npy``` format 
+* ```data_pred```: contains data employed for model evaluation on predicted datasets, also in ```*.npy``` format 
 with separated features (```X```) and labels (```y```). The filename prefix specifies the model used for prediction 
 (e.g., ```GRU-1_``` indicates that the ```GRU-1``` model was used for data prediction), following the same naming 
-scheme as in the paper. The meaning of ```_Xr_``` | ```_yr_``` is consistent with that in the ```real_data``` folder.
+scheme as in the paper. The meaning of ```_Xr_``` | ```_yr_``` is consistent with that in the ```data_real``` folder.
+
+It is important to note that the datasets ```data_real``` and ```data_pred``` comprise files containing data 
+processed after the wavelet transformation. Among the available options, the ```sym8``` wavelet function 
+in ```symmetric``` mode was selected, as it demonstrated the most robust and consistent results 
+across all conducted experiments.
 
 The files defining the model architectures are separated and stored in the root directory:
 * ```scag_model.py```: contains the model classes for ```C-SCAg``` and ```P-SCAg```, including ```ParametrizedMLP```, 
