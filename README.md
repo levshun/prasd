@@ -8,14 +8,22 @@ which is submitted for consideration at The ACM Conference on Computer and Commu
 
 # Experimental datasets
 
-In our work we experimented with two datasets:
-* AI4I-2021: Condition Monitoring Dataset, available at Kaggle: https://www.kaggle.com/datasets/stephanmatzka/condition-monitoring-dataset-ai4i-2021.
-* CASPER: Context-Aware Anomaly Detection System for Industrial Robotic Arms, available at IEEE DataPort: https://ieee-dataport.org/documents/casper-context-aware-anomaly-detection-system-industrial-robotic-arms.
+In this work, we conducted experiments using two datasets:
+* AI4I-2021: Condition Monitoring Dataset, available at Kaggle: 
+https://www.kaggle.com/datasets/stephanmatzka/condition-monitoring-dataset-ai4i-2021.
+* CASPER: Context-Aware Anomaly Detection System for Industrial Robotic Arms, available at IEEE DataPort: 
+https://ieee-dataport.org/documents/casper-context-aware-anomaly-detection-system-industrial-robotic-arms.
+
+# Experimental setup
+
+All experiments were conducted using Python ```v3.10```.
+
+The complete list of required packages for reproducing the experiments is provided in the ```requirements.txt``` file.
 
 # Experimental evaluation
 
-All artifacts required to reproduce the paper's contribution for the AI4I-2021 dataset are available in the ```ai4i``` folder, 
-while those for the CASPER dataset are located in the ```casper``` folder.
+All artifacts required to reproduce the paper's contribution for the AI4I-2021 dataset are available in 
+the ```ai4i``` folder, while those for the CASPER dataset are located in the ```casper``` folder.
 
 To facilitate usability, we have prepared the following Jupyter Notebooks:
 * ```cscag_demo.ipynb```: reproduces all evaluations for ```C-SCAg``` (Current State Classification Agent) 
