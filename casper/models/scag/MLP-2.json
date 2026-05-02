@@ -1,0 +1,1 @@
+{"layer_number": 2, "layer_width": 224, "dropout_prob": 0.21365943293079284, "use_batchnorm": true, "input_size": 720, "num_classes": 6}

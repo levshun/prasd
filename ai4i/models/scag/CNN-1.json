@@ -1,0 +1,1 @@
+{"layer_number": 2, "layer_width": 256, "kernel_size": 5, "stride": 2, "pool_kernel_size": 2, "dropout_prob": 0.17200901088286924, "use_batchnorm": true, "activation": "PReLU", "pool_type": "avg", "num_classes": 7}

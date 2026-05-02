@@ -1,0 +1,1 @@
+{"layer_number": 3, "layer_width": 160, "kernel_size": 5, "stride": 1, "pool_kernel_size": 2, "dropout_prob": 0.11422333930462238, "use_batchnorm": true, "activation": "ReLU", "pool_type": "max", "num_classes": 6}
