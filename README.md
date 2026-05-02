@@ -16,9 +16,11 @@ https://ieee-dataport.org/documents/casper-context-aware-anomaly-detection-syste
 
 # Experimental setup
 
-All experiments were conducted using Python ```v3.10```.
+All experiments with ```SCAg``` conducted using Python ```v3.10``` in the ```Ubuntu WSL``` environment.
+The list of required packages for reproducing those experiments provided in the ```scag_requirements.txt``` file.
 
-The complete list of required packages for reproducing the experiments is provided in the ```requirements.txt``` file.
+All experiments with ```SPAg``` and ```ADAg``` conducted using Python ```3.10``` in the ```Windows 11``` environment.
+The list of required packages for reproducing those experiments provided in the ```spag_requirements.txt``` file.
 
 # Experimental evaluation
 
@@ -26,29 +28,31 @@ All artifacts required to reproduce the paper's contribution for the AI4I-2021 d
 the ```ai4i``` folder, while those for the CASPER dataset are located in the ```casper``` folder.
 
 To facilitate usability, we have prepared the following Jupyter Notebooks:
-* ```cscag_demo.ipynb```: reproduces all evaluations for ```C-SCAg``` (Current State Classification Agent) 
-and ```P-SCAg``` (Predicted State Classification Agent). Please note that the notebooks for both datasets share 
-the same filename but are stored in their respective folders (```ai4i``` or ```casper```).
+* ```scag_demo.ipynb```: reproduces all evaluations for ```C-SCAg``` (Current State Classification Agent) 
+and ```P-SCAg``` (Predicted State Classification Agent). 
+* ```spag_demo.ipynb```: reproduces all evaluations for ```SPAg``` (State Prediction Agent). 
+* ```adag_demo.ipynb```: reproduces all evaluations for ```ADAg``` (Anomaly Detection Agent). 
+
+Please note that the notebooks for both datasets share the same filename but are stored 
+in their respective folders (```ai4i``` or ```casper```).
 
 Other folders include:
-* ```models```: contains pretrained model checkpoints (```*.pt``` files) and parameter files (```*.json```). 
-The naming convention for models corresponds to that used in the paper. Note that the ```models```directory includes 
-subfolders associated with the framework modules; for example, the ```scag``` subfolder contains pretrained models 
-for  ```C-SCAg``` and ```P-SCAg```.
-* ```data_real```: holds the data utilized for model training, validation, and testing on real-world data. 
-Data is stored in ```*.npy``` files, with features (```X```) and labels (```y```) separated. 
-If filenames use the prefix ```Xr_``` | ```yr_``` instead of ```X_``` | ```y_```, 
-this indicates a resampled version of the dataset, provided to comply with repository size limitations.
-* ```data_pred```: contains data employed for model evaluation on predicted datasets, also in ```*.npy``` format 
-with separated features (```X```) and labels (```y```). The filename prefix specifies the model used for prediction 
-(e.g., ```GRU-1_``` indicates that the ```GRU-1``` model was used for data prediction), following the same naming 
-scheme as in the paper. The meaning of ```_Xr_``` | ```_yr_``` is consistent with that in the ```data_real``` folder.
+* ```models```: contains pretrained model checkpoints (```*.pt``` and ```*.keras``` files) and parameter files 
+(```*.json```). The naming convention for models corresponds to that  used in the paper. Note that the 
+```models``` directory includes subfolders associated with the framework modules; for example, 
+the ```scag``` subfolder contains pretrained models for  ```C-SCAg``` and ```P-SCAg```.
+* ```data```: holds the data utilized for model training, validation, and testing for different agents, with respective
+subfolders naming scheme – ```c-scag``` for real-world data with labels, ```p-scag``` for predicted data with labels, 
+etc. Data is stored in ```*.npy``` and ```.csv``` files, with features (```X```) and labels (```y```) separated. 
+Most of the files are presented in resampled version to comply with repository size limitations.
+* ```adag```: contains the model class ```AnomalyDetectorPro``` for ```ADAg```.
+* ```scag```: contains the model classes for ```C-SCAg``` and ```P-SCAg```, including ```ParametrizedMLP```, 
+```ParametrizedCNN```, ```ParametrizedRNN``` and ```ParametrizedTransformer```.
+* ```spag```: contains the model classes for ```SPAg```, including ```BaseForecaster``` and
+```DeepForecaster```.
+* ```support```: contains additional library files for ```ADAg```, ```SCAg``` and ```SPAg```.
 
-It is important to note that the datasets ```data_real``` and ```data_pred``` comprise files containing data 
+It is important to note that the datasets ```c-scag``` and ```p-scag``` comprise files containing data 
 processed after the wavelet transformation. Among the available options, the ```sym8``` wavelet function 
 in ```symmetric``` mode was selected, as it demonstrated the most robust and consistent results 
 across all conducted experiments.
-
-The files defining the model architectures are separated and stored in the root directory:
-* ```scag_model.py```: contains the model classes for ```C-SCAg``` and ```P-SCAg```, including ```ParametrizedMLP```, 
-```ParametrizedCNN```, ```ParametrizedRNN``` and ```ParametrizedTransformer```.
