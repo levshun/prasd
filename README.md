@@ -3,8 +3,7 @@
 ![An overviwew of the framework](img/framework.jpg)
 
 This repository has been developed to support the research paper titled 
-"PrASD: Intelligent Multi-Agent Framework for Predictive-Based Abnormal State Detection in Smart Factory Devices",
-which is submitted for consideration at The ACM Conference on Computer and Communications Security (ACM CCS 2026).
+"PrASD: Intelligent Multi-Agent Framework for Predictive-Based Abnormal State Detection in Smart Factory Devices".
 
 # Experimental datasets
 
